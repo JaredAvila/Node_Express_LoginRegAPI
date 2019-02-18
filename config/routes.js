@@ -7,8 +7,13 @@ module.exports = app => {
     users.registration(req, res);
   });
 
+  //POST -- Login User
+  app.post("/api/login", (req, res) => {
+    users.login(req, res);
+  });
+
   //REDIRECT TO ANGULAR IF NO OTHER ROUTES ARE HIT
-  //   app.all("*", (req, res, next) => {
-  //     res.sendFile(path.resolve("./testApp/dist/testApp/index.html"));
-  //   });
+  app.all("*", (req, res, next) => {
+    res.sendFile(path.resolve("../client/dist/client/index.html"));
+  });
 };

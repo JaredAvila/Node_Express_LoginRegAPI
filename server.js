@@ -4,7 +4,7 @@ const express = require("express"),
   port = 8000;
 
 app.use(bodyparser.json());
-// app.use(express.static(__dirname + "insert path to application"));
+app.use(express.static(__dirname + "../../client/dist/client"));
 
 require("./models/User");
 require("./config/routes")(app);
